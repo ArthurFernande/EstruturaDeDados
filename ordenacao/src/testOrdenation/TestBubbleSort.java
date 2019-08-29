@@ -10,11 +10,20 @@ import simpleOrdenation.BubbleSort;
 class TestBubbleSort {
 
 	@Test
-	public void testOrdena() {
+	public void testOrdenaImpar() {
 		BubbleSort ordena = new BubbleSort();
 		int[] array1 = { 5, 4, 3, 2, 1 };
 		ordena.ordenaArray(array1);
 		int[] array2 = { 1, 2, 3, 4, 5 };
+		assertArrayEquals(array2, array1);
+
+	}
+	@Test
+	public void testOrdenaPar() {
+		BubbleSort ordena = new BubbleSort();
+		int[] array1 = { 5, 4, 3, 2, 1,0 };
+		ordena.ordenaArray(array1);
+		int[] array2 = {0, 1, 2, 3, 4, 5 };
 		assertArrayEquals(array2, array1);
 
 	}
@@ -30,7 +39,7 @@ class TestBubbleSort {
 	}
 
 	@Test
-	public void TesNulo() {
+	public void TestNulo() {
 		BubbleSort ordena = new BubbleSort();
 		int[] array5 = {};
 		ordena.ordenaArray(array5);
